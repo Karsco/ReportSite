@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+	<link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.css" />
+	<link rel="stylesheet" type="text/css" href="css/ngDialog.css" />
+	<link rel="stylesheet" type="text/css" href="css/ngDialog-theme-default.css" />
+	<link rel="stylesheet" type="text/css" href="css/myStyles.css" />
+	
+<!--AngularJS functions -->	
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular-animate.js"></script>
+	<script src="js/ngDialog.js"></script>
+	<script type="text/javascript" src="js/myFunctions.js"></script>	
+	<title>Practitioner-led action research project - Findings</title>
+</head>
+<body ng-app="AngularAnimation">
+<div class="container-fluid">
+	<div id="nav" class="row-fluid span12 navbar">
+		<div class="navbar-inner">
+			<ul class="nav">
+				<li ><a href="main.html" class="home" >Home</a>
+				<li class="divider-vertical"></li>
+				<li><a href="LitReview.html">Literature Review</a></li>
+				<li class="divider-vertical"></li>				
+				<li><a href="progress.html">Research and Analysis</a></li>
+				<li class="divider-vertical"></li>
+				<li class="active"><a href="#">Findings</a></li>				
+				<li class="divider-vertical"></li>
+				<li><a href="conclusions.html">Conclusions</a></li>				
+				<li class="divider-vertical"></li>					
+				<li><a href="studentVoices.html">Student Voices</a></li>				
+				<li class="divider-vertical"></li>
+				<li><a href="recommendations.html">Recommendations</a></li>				
+				<li class="divider-vertical"></li>					
+				<li ><a href="bibliography.html">Bibliography</a></li>	
+			</ul>
+		</div>
+	</div>
+	<div id="header" class="span12">
+		<h2><strong>Findings and recommendations</strong></h2>
+		&nbsp;&nbsp;
+	</div>
+	<div id="section" class="span12" ng-controller="SlideCtrl">
+		<form ng-show="ready" class="">
+			<div class="switch" ng-switch='article' ng-animate="'animate'">
+<!-- ngSwitchWhen: 1 -->
+				<div ng-switch-when="1" ng-controller="dialogCtrl">
+					<div class="span7"><h3 class="leftalign"><strong>Student perceptions of progress made during project</strong></h3></div>
+					<div class="span2"><a class="btn disabled" href="#" ><strong>Previous</strong></a></div>					
+					<div class="span2"><a class="btn" href="#" ng-click="nextClicked()"><strong>Next</strong></a></div>
+					&nbsp;
+					<hr />
+					<div class="row-fluid span12">
+						<div class="span6">
+							<p>After final completion of their websites, students were asked to complete an online questionnaire (see right)
+							<p>Students were asked to rate their levels of confidence at the start of the project.  Each student was asked to
+							rate his/her confidence in being able to create a website to meet the client's requirements.  At this stage in the project, 
+							a student may be able to reflect on how their perception of the requirements became more reliable as the project progressed.  
+							Students were also asked to rate their levels of confidence in their ability to use Wordpress to produce a suitable site.</p>
+							&nbsp;
+							<div class="span5">
+								<p><strong>Confidence in ability to meet requirements</strong></p>
+								<p><img src="images/Confidence-pie-chart.png" alt="Confidence in meeting requirements" /></p>
+								&nbsp;
+								<button ng-click="open('confReqsDialog')" ><a href="" class="demo">Analysis</a></button>
+							</div>	
+							<div class="span5">
+								<p><strong>Confidence in using Wordpress at the start of the project</strong></p>					
+								<p><img src="images/confidence-wordpress-pie.png" alt="Confidence in using Wordpress" /></p>
+								&nbsp;
+								<button ng-click="open('confWordpressDialog')"><a href="" class="demo">Analysis</a></button>							
+							</div>
+							&nbsp;
+							<hr />
+							<div class="span12">
+								<p><strong>Satisfaction with the final website</strong></p>
+								<p>All students were at least moderately satisfied with the final results of the website project.  Seven students were very 
+								satisfied (37%), the rest rating their satisfaction at level 2 or 3.  One student who was very satisfied with the final website 
+								had rated levels of confidence both in meeting the requirements and in using Wordpress at the lowest level, 'not confident at 
+								all'.</p>
+								&nbsp;
+								<p>There is no significant correlation between confidence at the start and satisfaction with the end product, which might 
+								have indicated that students were able to identify a good progression in their learning and skills development.  The two data 
+								sets have a Pearson's  product-moment correlation coefficient of -0.14.  The correlation is negative but too weak to be 
+								significant.</p>
+								&nbsp;
+							</div>	
+						</div>
+						<div class="span6">
+							<iframe src="https://docs.google.com/forms/d/1lwTor0ys5vW0cYIVkuM6okje-_JdstfGLFkQ0kZbi7k/viewform?embedded=true" width="90%" height="500" frameborder="1" marginheight="0" marginwidth="0">Loading...</iframe>							
+						</div>
+					</div>							
+				</div>
+				
+<!-- ngSwitchWhen: 2 -->
+				<div ng-switch-when="2" ng-controller="dialogCtrl">
+					<div class="span7"><h3 class="leftalign"><strong>Student perceptions of value of first session in Rochester.</strong></h3></div>
+					<div class="span2"><a class="btn" href="#" ng-click="prevClicked()"><strong>Previous</strong></a></div>
+					<div class="span2"><a class="btn" href="#" ng-click="nextClicked()"><strong>Next</strong></a></div>
+					&nbsp;
+					<hr />
+					<div class="row-fluid span12">
+						<div class="span6">
+							<p>This session was a learning session, led by Ahmed who is a professional, freelance web and app developer.  Essentially this 
+							was a classroom but the setting had been changed.  The session was held in office space in Rochester.  Students needed to 
+							travel to the office, which was equipped with the laptops and wi-fi access they needed.   I had organised the laptops and 
+							transported them to the office ready for the session.   The bursary funding available for this project allowed us to finance 
+							this session and the payments included a taxi for five students who had a mathematics lesson close to the session time and 
+							wouldn't have otherwise been able to get from college to Rochester in time for the start of the session.</p>
+							&nbsp;
+							<p>Students were made aware at the start of the  session that Ahmed had extensive experience of designing and developing websites 
+							and that he would take them through the process of moving from a set of requirements towards an outline design for a minimal 
+							viable product (MVP) that has maximum usability.  He made the students think about features of websites, what a feature is and 
+							what features are more desirable than others.  He was able to present a view of the process completley different from mine, 
+							which was learnt from research rather than experience.  Students experienced the process of taking a set of requirements, 
+							identifying features that would help to meet those requirements, evaluating those features and designing with a minimum set 
+							of features.   Once these features had been considered and reduced to an optimum number (in this case Ahmed suggested three 
+							main features), students were taught how to search for and install plug-ins.</p>
+							&nbsp;
+							<p>Feedback from students straight after the session was that they enjoyed it and that they felt they had learned a lot from 
+							it.  Of the fifteen students who attended the session and responded to the survey, four (27%) felt that they had learned about 
+							how to evaluate features necessary for a user-friendly site.  Responses included: "The main features in depth in order for which 
+							is most inportant in a website", "That websites should be easiest to use by the user", "Useful features to use on websites", 
+							"What areas needed to be on the website".   A further three students  (20%) identified plug-ins as the most significant learning 
+							taken from the session.   So, around 47% of the students who attended the session expressed a recognition of the importance of 
+							the practical and design skills that they had learnt.</p>
+							&nbsp;
+							<p>Other significant learning identified by students from this session were:  three students (20%) felt that they had 
+							learnt about motivation; one student felt that he/she had learnt about speed, this referred to the need to be able to respond 
+							and work speedily in the digital industries;  one further student felt that he/she had developed an "ability to learn" as a 
+							result of the session.  This same student, when questioned after the session, had actually tried to use Wordpress at home.  For 
+							this particular student, this was unusual.  My personal perception of this student is that he/she submits all work on time but 
+							at the expense of any thought or quality in the work so to actually do some extra work independently and without being asked to 
+							do so was a positive outcome.</p>
+							&nbsp;
+							<p>I have categorised all five of the responses described above in the category "Qualities needed in the digital industries".  
+							Three students (20%) cited general learning such as "Wordpress skills",  "website planning" and "information about the workplace".  
+							These are placed under the category "other" as it they are considered to be general in nature rather than specific to this session.</p>
+							&nbsp;
+							<p>Of particular interest to me, in this small sample, is that the two most significant areas identified by the students were the 
+							main learning objective from the session, one that I was not experienced enough to teach myself, and qualities important in the 
+							industry such as motivation and speed of working.  There is some evidence here to suggest that a session of this sort has value 
+							in developing skills and qualities pertinent to the digital industries.</p>
+							&nbsp;
+						</div>
+						<div class="span6">
+							<img alt="value of session in Rochester" src="images/valueRochester.png" width="80%" />
+						</div>	
+					</div>
+				</div>
+
+<!-- ngSwitchWhen: 3 -->
+				<div ng-switch-when="3" ng-controller="dialogCtrl">
+					<div class="span7"><h3 class="leftalign"><strong>Student perceptions of the value of the Wordpress clinic session</strong></h3></div>
+					<div class="span2"><a class="btn" href="#" ng-click="prevClicked()"><strong>Previous</strong></a></div>
+					<div class="span2"><a class="btn" href="#" ng-click="nextClicked()"><strong>Next</strong></a></div>
+					&nbsp;
+					<hr />
+					<div class="row-fluid span12">				
+						<div class="span6">
+							<img alt="value of Wordpress clinic bar chart" src="images/valueWordpressClinic.png" width="80%" />
+							<img alt="value of Wordpress clinic pie chart" src="images/knowledgeFromClinic.png" width="80%" />							
+						</div>
+						<div class="span6">
+							<p>Students were asked to reflect on what they gained from the clinic session.  The clinic was designed to be student led 
+							as far as possible.  Students were asked to come along with things they were having trouble with and to ask James to help 
+							them out.  The feedback immediately after the session had been very positive and the response in the focus group meeting had 
+							been more positive than it had been about the first session.  However, students appeared to be less aware of what they had 
+							learnt or gained from this session.  This could possibly be attributed to the fact that some of them were not aware of what 
+							they needed to know and also that some of them have not been very detailed in their responses.</p>
+							&nbsp;
+							<p>I have attempted to categorise the  responses into particular techniques, general help and unspecified.  These categories 
+							only really show that students felt that they gained something from attending the session.  Twelve of the fifteen students who 
+							attended the session and took the survey (80%) felt that they learned more with James' help than they otherwise would.  Their 
+							rating of the value of the session was 2.  One student rated it 5 (not valuable at all),  and seven students rated it at 1 
+							(very valuable).  The level of studentssatisfaction with this session seems to be relatively high.  Three students stated that 
+							they had done some extra learning in their own time as a result of the session, this was less than after the first session but 
+							this may be due to the pressure of work  which was greater around the time of the 'clinic' session.</p>
+							&nbsp;
+						</div>
+					</div>
+				</div>
+				
+<!-- ngSwitchWhen: 4 -->
+				<div ng-switch-when="4" ng-controller="dialogCtrl">
+					<div class="span7"><h3 class="leftalign"><strong>Do students feel that this project has helped them in terms of their future careers?</strong></h3></div>
+					<div class="span2"><a class="btn" href="#" ng-click="prevClicked()"><strong>Previous</strong></a></div>
+					<div class="span2"><a class="btn disabled" href="#"><strong>Next</strong></a></div>					
+					&nbsp;
+					<hr />
+					<div class="row-fluid span12 centrealign">	
+						<button ng-click="open('futureCareers')" ><a href="" class="demo">Show analysis of student reponses</a></button>		
+						<p><img src="images/futureCareers.png" alt="value of project for future career" width="80%"/></p>
+					</div>
+				</div>
+				
+<!-- pop up scripts -->				
+				<script type="text/ng-template" id="confReqsDialog">
+					<div class="ngdialog-message">
+						<div>							
+							<p>A total of eleven students who responded to the survey (58%) reported that they had felt confident at the start of the 
+							project that they would be able to meet the requirements of the brief.  Only one student was not confident at all and a 
+							further two indicated a lack of confidence. (n=3, 16% not confident).  This  suggests that 84% of students were fairly 
+							confident in their ability to meet a brief for a website.  On reflection, I feel that this is a fairly accurate assessment 
+							of levels of confidence at the time and possibly indicates a general view that anyone can make a website.  This question, 
+							having been asked at the end of the project was designed to allow students to make an informed reflection on their confidence, 
+							at a point when they are more aware of what was involved in the project, and that more than a basic use of Wordpress was needed.</p>
+							&nbsp;
+						</div>
+					</div>
+				</script>
+				<script type="text/ng-template" id="confWordpressDialog">
+					<div class="ngdialog-message">
+						<div>							
+						<p>At the start of the project students were almost complete beginners at using Wordpress.  They had used a limited online version and 
+						had not used a hosted version (where they are managing the files , plug-ins and themes themselves) before.   Nevertheless, 
+						fourteen students (74%) had at least a fairly level of confidence relating to their ability to use Wordpress when the project started.  This time 
+						two students were not confident at all about their knowledge of Wordpress.   These students were also not confident of their 
+						ability to meet the requirements of the brief.  It is possible that these students had more of an understanding of what might 
+						be involved than other students.  With an average response of 2.84, confidence at using Wordpress was slightly lower than 
+						confidence at meeting the requirements (2.42).  Again, asking the question after, rather than before the intervention, 
+						allowed students to reflect on their efforts knowing the skills they actually needed to be able to complete the project.</p>
+						&nbsp;
+						</div>
+					</div>
+				</script>
+				
+				<script type="text/ng-template" id="futureCareers">
+					<div class="ngdialog-message">
+						<div>
+							<p>Student responses to this question were categorised as follows:</p>
+							&nbsp;
+							&nbsp;
+							<p class='smallText'>- the student felt that the experience has sparked an interest in a career in web development (4 students, 21%) <em>"After 
+							using Wordpress I feel it will be something i would be interested in doing as a career or work on the side"</em></p>
+							&nbsp;		
+							<p class='smallText'>- the student felt that the project had been a good experience in terms of gaining skills in developing websites but 
+							this would not be their chosen career (6 students, 32%) <em>"It hasn't helped my career, but it has improved my knowledge of 
+							creation of websites"</em></p>
+							&nbsp;
+							<p class='smallText'>- the student's response was not career related (4 students, 21%) <em>"I don't how I can see myself using this as a future 
+							career but it would definitely make me more hirable"</em></p>
+							&nbsp;
+							<p class='smallText'>- the student felt that the project was not helpful at all in terms of their future career (4 students, 21%)  <em>"Didnt 
+							really help me personally because my area of expertise is more towards hardware but I loved the experience and If i had to 
+							do it again I would"</em>.</p>
+							&nbsp;	
+						</div>
+					</div>
+				</script>							
+<!-- end of scripts -->
+
+			
+			</div>
+		</form>
+		</div>
+	</div>
+	<div id="footer" class="row-fluid span12">
+	<div class="span10"><img src="images/Banner_for_reports.jpg" alt="Education and Training Foundation banner" width="100%" /></div>
+	<div class="span2">June 30th 2014</div>
+	</div>
+</div>
+</body>
+</html>	

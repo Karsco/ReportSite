@@ -6,12 +6,15 @@ app.controller('SlideCtrl', function($scope, $timeout, $animate) {
 	$scope.ready = 'true';
 	$scope.article = '1';
 	
-	var maxArticles = '4';
 	var timeToChange = 3000;
-	
+
 	$scope.nextClicked = function(){
-		$scope.article = ($scope.article % maxArticles) + 1;
+		$scope.article++;
 	}
+	
+	$scope.prevClicked = function(){
+		$scope.article--;
+	}	
 	
 	var articleTimer =
 		$timeout(function interval() {
@@ -20,7 +23,7 @@ app.controller('SlideCtrl', function($scope, $timeout, $animate) {
 	
 });
 
-app.controller('dialogCtrl', function ($scope, ngDialog) {
+app.controller('dialogCtrl', function ($scope, ngDialog, $window) {
 	$scope.open = function (dialogId) {
 		ngDialog.open( {
 			template: dialogId,
@@ -30,7 +33,22 @@ app.controller('dialogCtrl', function ($scope, ngDialog) {
 	$scope.close = function(dialogId){	
 		ngDialog.close(dialogId);
 	};
+	$scope.openWindow = function(url){
+		$window.open(url);
+	};	
 });
 
+app.controller('popUpCtrl', function ($scope, ngDialog) {
+	$scope.open = function (dialogId) {
+		ngDialog.open( {
+			template: dialogId,
+			className: 'ngdialog-theme-default',
+			windowClass:'modalLarge'
+		});
+	};	
+	$scope.close = function(dialogId){	
+		ngDialog.close(dialogId);
+	};
+});
 
 

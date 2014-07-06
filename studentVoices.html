@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+	<link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.css" />
+	<link rel="stylesheet" type="text/css" href="css/ngDialog.css" />
+	<link rel="stylesheet" type="text/css" href="css/ngDialog-theme-default.css" />
+	<link rel="stylesheet" type="text/css" href="css/myStyles.css" />
+	
+<!--AngularJS functions -->	
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+	<script type="text/javascript" src="js/mySoundFunctions.js"></script>	
+	<title>Practitioner-led action research project</title>
+</head>
+<body ng-app="AngularSounds">
+<div id="container-fluid">
+	<div id="nav" class="row-fluid span12 navbar">
+		<div class="navbar-inner">
+			<ul class="nav">
+				<li><a href="main.html" class="home" >Home</a>
+				<li class="divider-vertical"></li>
+				<li><a href="LitReview.html">Literature Review</a></li>
+				<li class="divider-vertical"></li>				
+				<li><a href="progress.html">Research and Analysis</a></li>
+				<li class="divider-vertical"></li>
+				<li><a href="findings.html">Findings</a></li>				
+				<li class="divider-vertical"></li>	
+				<li><a href="conclusions.html">Conclusions</a></li>				
+				<li class="divider-vertical"></li>					
+				<li class="active"><a href="#">Student Voices</a></li>				
+				<li class="divider-vertical"></li>
+				<li><a href="recommendations.html">Recommendations</a></li>				
+				<li class="divider-vertical"></li>					
+				<li><a href="bibliography.html">Bibliography</a></li>				
+			</ul>
+		</div>
+	</div>
+	<div id="header" class="span12">
+		<h2><strong>Hear student views</strong></h2>
+		&nbsp;&nbsp;
+	</div>
+	<div id="section" class="row-fluid span12" ng-controller="soundCtrl" >
+		<div id="sounds" class="span2 homeLink">
+			<audio id="audioHM1"><source id="aHMsrc" src="voices/EnjoyMost.mp3"></source></audio>
+			<audio id="audioHM2"><source id="aHMsrc" src="voices/FirstPriorKnowledge.mp3"></source></audio>	
+			<audio id="audioHM3"><source id="aHMsrc" src="voices/GoodWithAnimation.mp3"></source></audio>
+			<audio id="audioHM4"><source id="aHMsrc" src="voices/HelpingTeam.mp3"></source></audio>
+			<audio id="audioHM5"><source id="aHMsrc" src="voices/Interest.mp3"></source></audio>
+			<audio id="audioHM6"><source id="aHMsrc" src="voices/LearnedLots.mp3"></source></audio>
+			<audio id="audioHM7"><source id="aHMsrc" src="voices/Practical1.mp3"></source></audio>
+			<audio id="audioHM8"><source id="aHMsrc" src="voices/Practical2.mp3"></source></audio>
+			<audio id="audioHM9"><source id="aHMsrc" src="voices/Practical3.mp3"></source></audio>
+			<audio id="audioHM10"><source id="aHMsrc" src="voices/RealCase.mp3"></source></audio>
+			<audio id="audioHM11"><source id="aHMsrc" src="voices/Relevant.mp3"></source></audio>
+			<audio id="audioHM12"><source id="aHMsrc" src="voices/Understood.mp3"></source></audio>			
+			<button class="audio_btn" ng-click="playVoice(1,12)" ><h4><strong><a href="" class="demo">What helped you to produce the assignment you are most proud of?</a></strong></h3></button>
+		</div>
+		<div id="sounds" class="span2 homeLink">
+			<audio id="audioHM13"><source id="aHMsrc" src="voices/didntInterestMe.mp3"></source></audio>
+			<audio id="audioHM14"><source id="aHMsrc" src="voices/didntUnderstand.mp3"></source></audio>
+			<audio id="audioHM15"><source id="aHMsrc" src="voices/JustLeftItOut.mp3"></source></audio>
+			<audio id="audioHM16"><source id="aHMsrc" src="voices/NotExplained.mp3"></source></audio>
+			<audio id="audioHM17"><source id="aHMsrc" src="voices/onTopOfEachOther.mp3"></source></audio>					
+			<button class="audio_btn" ng-click="playVoice(13,17)" ><h4><strong><a href="" class="demo">Why might you have handed an assignment in that you knew wouldn't pass or was late?</a></strong></h4></button>
+		</div>
+
+		<div id="sounds" class="span2 homeLink">
+			<audio id="audioHM18"><source id="aHMsrc" src="voices/betterWithEmployers.mp3"></source></audio>
+			<audio id="audioHM19"><source id="aHMsrc" src="voices/bitofaBoost.mp3"></source></audio>	
+			<audio id="audioHM20"><source id="aHMsrc" src="voices/clientFeedback.mp3"></source></audio>
+			<audio id="audioHM21"><source id="aHMsrc" src="voices/goodExperience.mp3"></source></audio>
+			<audio id="audioHM22"><source id="aHMsrc" src="voices/GoodKnowledge.mp3"></source></audio>
+			<audio id="audioHM23"><source id="aHMsrc" src="voices/moreIncentive.mp3"></source></audio>
+			<audio id="audioHM24"><source id="aHMsrc" src="voices/moreResponsibility.mp3"></source></audio>
+			<audio id="audioHM25"><source id="aHMsrc" src="voices/otherWorkImpacted.mp3"></source></audio>
+			<audio id="audioHM26"><source id="aHMsrc" src="voices/realResponsibility.mp3"></source></audio>
+			<audio id="audioHM27"><source id="aHMsrc" src="voices/someoneReal.mp3"></source></audio>
+			<audio id="audioHM28"><source id="aHMsrc" src="voices/trainingourselves.mp3"></source></audio>		
+			<button class="audio_btn" ng-click="playVoice(18,28)" ><h4><strong><a href="" class="demo">How did this project benefit you in meeting the deadlines?</a></strong></h3></button>
+		</div>
+		<h4 align="left"><strong>Click each voice button again to hear more....</strong></h4>
+		<hr />
+	</div>
+	<div class="span12">
+		<div class="span2 homelink">
+			<iframe width="100%" src="//www.youtube.com/embed/Y17UiFOER5U?list=PLsBGtUEPvDaVa_lyKsaK2xfZ353Ml69ed" frameborder="0" allowfullscreen></iframe>
+		</div>
+		<div class="span2 homelink">		
+			<iframe width="100%" src="//www.youtube.com/embed/dCdhM2avIE4" frameborder="0" allowfullscreen></iframe>
+		</div>
+		<div class="span2 homelink">		
+			<iframe width="100%" src="//www.youtube.com/embed/videoseries?list=PLsBGtUEPvDaXsxiEc10ZNqC2egjIKoNoa" frameborder="0" allowfullscreen></iframe>
+		</div>
+		<div class="span2 homelink">		
+			<iframe width="100%" src="//www.youtube.com/embed/sm06puWGxyM" frameborder="0" allowfullscreen></iframe>
+		</div>
+		<div class="span2 homelink">		
+			<iframe width="100%" src="//www.youtube.com/embed/wpGfy5PDLrU" frameborder="0" allowfullscreen></iframe>
+		</div>		
+		<h4 align="left"><strong>Double click on video for full screen....</strong></h4>		
+	</div>
+	<div id="footer" class="row-fluid span12">
+		<div class="span10"><img src="images/Banner_for_reports.jpg" alt="Education and Training Foundation banner" width="100%" /></div>
+		<div class="span2">June 30th 2014</div>
+	</div>
+</div>
+</body>
+</html>	

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+	<link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.css" />
+	<link rel="stylesheet" type="text/css" href="css/ngDialog.css" />
+	<link rel="stylesheet" type="text/css" href="css/ngDialog-theme-default.css" />
+	<link rel="stylesheet" type="text/css" href="css/myStyles.css" />
+	
+<!--AngularJS functions -->	
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular-animate.js"></script>
+	<script src="js/ngDialog.js"></script>
+	<script type="text/javascript" src="js/myFunctions.js"></script>	
+	<title>Practitioner-led action research project</title>
+</head>
+<body ng-app="AngularAnimation">
+<div id="container-fluid span12">
+	<div id="nav" class="row-fluid span12 navbar">
+		<div class="navbar-inner">
+			<ul class="nav">
+				<li class="active"><a href="#" class="home" >Home</a>
+				<li class="divider-vertical"></li>
+				<li><a href="LitReview.html">Literature Review</a></li>
+				<li class="divider-vertical"></li>				
+				<li><a href="progress.html">Research and Analysis</a></li>
+				<li class="divider-vertical"></li>	
+				<li><a href="findings.html">Findings</a></li>				
+				<li class="divider-vertical"></li>	
+				<li><a href="conclusions.html">Conclusions</a></li>				
+				<li class="divider-vertical"></li>					
+				<li><a href="studentVoices.html">Student Voices</a></li>				
+				<li class="divider-vertical"></li>
+				<li><a href="recommendations.html">Recommendations</a></li>				
+				<li class="divider-vertical"></li>					
+				<li><a href="bibliography.html">Bibliography</a></li>				
+			</ul>
+		</div>
+	</div>
+	<div id="header" class="row-fluid span12">
+		<div class="span9">
+			<h2 class="rightalign"><strong>A practitioner-led action research project: </strong></h2>
+			&nbsp;&nbsp;
+			<h3 class="rightalign"><strong>Investigating the effect on student motivation of employer-supported learning and assessment activities.</strong></h3>
+			<h5 class="rightalign"><strong>Karen Scott</strong></h5>
+		</div>	
+		<div class="span2 rightalign"><img src="images/MyPic.jpg" alt="Lecturer, Mid Kent College of HFE, Medway Campus, Gillingham, Kent" width="70%" /></div>
+	</div>
+	<div id="section" class="row-fluid span12" ng-controller="popUpCtrl" >
+		<div id="Aims" class="span2 homeLink">
+			<h3><strong>Aims and Objectives</strong></h3>
+			<div class="home_btn_group">
+				<a href=""  class="btn btn-default btn-block" ng-click="open('aimsPopUp')"><strong>Preview</strong></a>
+				<a class="btn btn-default btn-block" href="data/aims.pdf" target="_blank"><strong>Open pdf window</strong></a>
+			</div>	
+		</div>
+		<div id="Background" class="span2 homeLink">
+			<h3><strong>Background</strong></h3>
+			<p></p>&nbsp;
+			<p></p>&nbsp;			
+			<div class="home_btn_group">
+				<a href="#" class="btn btn-default btn-block" ng-click="open('backgroundPopUp')"><strong>Preview</strong></a>
+				<a class="btn btn-default btn-block" href="data/background.pdf" target="_blank"><strong>Open pdf window</strong></a>
+			</div>	
+		</div>
+		<div id="Research" class="span2 homeLink">
+			<h3><strong>Current Research</strong></h3>
+			<div class="home_btn_group">
+				<a href="#" class="btn btn-default btn-block" ng-click="open('researchPopUp')"><strong>Preview</strong></a>
+				<a class="btn btn-default btn-block" href="data/research.pdf" target="_blank"><strong>Open pdf window</strong></a>				
+			</div>
+		</div>
+		<div id="Methods" class="span2 homeLink">
+			<h3><strong>Research Methods</strong></h3>
+			<div class="home_btn_group">
+				<a href="#" class="btn btn-default btn-block" ng-click="open('methodsPopUp')"><strong>Preview</strong></a>
+				<a class="btn btn-default btn-block" href="data/methods.pdf" target="_blank"><strong>Open pdf window</strong></a>					
+			</div>
+		</div>
+		<div id="Conclusions" class="span2 homeLink">
+			<h3><strong>Conclusions</strong></h3>
+			<p></p>&nbsp;
+			<p></p>&nbsp;
+			<div class="home_btn_group">
+				<a href="#" class="btn btn-default btn-block" ng-click="open('conclusionsPopUp')"><strong>Preview</strong></a>
+				<a class="btn btn-default btn-block" href="data/conclusions.pdf" target="_blank"><strong>Open pdf window</strong></a>				
+			</div>
+		</div>
+		
+		<div id="Recommendations" class="span2 homeLink">
+			<h3><strong>Recommend- ations</strong></h3>
+			<div class="home_btn_group">
+				<a href="#" class="btn btn-default btn-block" ng-click="open('recommendationsPopUp')"><strong>Preview</strong></a>
+				<a class="btn btn-default btn-block" href="data/recommendations.pdf" target="_blank"><strong>Open pdf window</strong></a>					
+			</div>
+		</div>
+		
+		<!-- Modal Dialogs -->
+		<script type="text/ng-template" id="aimsPopUp">
+			<div class="ngdialog-message" height="100%">
+				<div><embed src="data/aims.pdf" width="95%" height="500"></embed></div>
+			</div>
+		</script>
+		<script type="text/ng-template" id="researchPopUp">
+			<div class="ngdialog-message" height="100%">
+				<div><embed src="data/research.pdf" width="95%" height="400"></embed></div>
+			</div>
+		</script>
+		<script type="text/ng-template" id="backgroundPopUp">
+			<div class="ngdialog-message" height="100%">
+				<div><embed src="data/background.pdf" width="95%" height="400"></embed></div>
+			</div>
+		</script>
+		<script type="text/ng-template" id="methodsPopUp">
+			<div class="ngdialog-message" height="100%">
+				<div><embed src="data/methods.pdf" width="95%" height="400"></embed></div>
+			</div>
+		</script>
+		<script type="text/ng-template" id="conclusionsPopUp">
+			<div class="ngdialog-message" height="100%">
+				<div><embed src="data/conclusions.pdf" width="95%" height="400"></embed></div>
+			</div>
+		</script>
+		<script type="text/ng-template" id="recommendationsPopUp">
+			<div class="ngdialog-message" height="100%">
+				<div><embed src="data/recommendations.pdf" width="95%" height="400"></embed></div>
+			</div>
+		</script>
+	</div>
+	<div id="footer" class="row-fluid span12">
+		<div class="span10"><img src="images/Banner_for_reports.jpg" alt="Education and Training Foundation banner" width="100%" /></div>
+		<div class="span2">June 30th 2014</div>
+	</div>
+</div>
+
+</body>
+</html>	

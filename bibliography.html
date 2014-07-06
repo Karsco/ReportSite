@@ -3,7 +3,7 @@
 <head>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
 	<link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.css" />
-	<link rel="stylesheet" type="text/css" href="myStyles.css" />
+	<link rel="stylesheet" type="text/css" href="css/myStyles.css" />
 	<!--AngularJS functions -->	
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
 	<script type="text/javascript" src="js/app.js"></script>	
@@ -14,20 +14,28 @@
 	<div id="nav" class="span12 navbar">
 		<div class="navbar-inner">
 			<ul class="nav">
-				<li><a href="index.html" class="home" >Home</a>
+				<li ><a href="main.html" class="home" >Home</a>
 				<li class="divider-vertical"></li>
 				<li><a href="LitReview.html">Literature Review</a></li>
 				<li class="divider-vertical"></li>				
-				<li class="active"><a href="#">Bibliography</a></li>
-				<li class="divider-vertical"></li>				
-				<li><a href="progress.html">Progress Blog</a></li>
+				<li><a href="progress.html">Research and Analysis</a></li>
+				<li class="divider-vertical"></li>	
+				<li><a href="findings.html">Findings</a></li>				
+				<li class="divider-vertical"></li>
+				<li><a href="conclusions.html">Conclusions</a></li>				
+				<li class="divider-vertical"></li>					
+				<li><a href="studentVoices.html">Student Voices</a></li>				
+				<li class="divider-vertical"></li>
+				<li><a href="recommendations.html">Recommendations</a></li>				
+				<li class="divider-vertical"></li>					
+				<li class="active"><a href="#">Bibliography</a></li>	
 			</ul>
 		</div>
 	</div>
 	<div id="header" class="span12">
-		<h2><strong>Bibliographic references</strong></h2>
+		<h2><strong>Research references</strong></h2>
 		&nbsp;&nbsp;
-		<p class="rightalign"><strong>Compilation date:  </strong>30th May 2014</p>
+		<p class="rightalign"><strong>Publication date:  </strong>30th June 2014</p>
 		&nbsp;&nbsp;
 	</div>
 	<div id="section" class="span12" ng-controller="RefController">
@@ -35,10 +43,20 @@
 		<div class="well" ng-repeat="ref in refList">
 			{{ref.Authors}}, {{ref.Year}}, {{ref.Title}}, {{ref.Published}}.{{ref.Link}} {{ref.Accessed}}
 		</div>
+		&nbsp;&nbsp;
+		<h3 class="leftalign"><strong>Appendices</strong></h3>
+		<div class="span12">
+			<p><a href="appendices/AssignmentBrief.pdf" target="_blank">Assignment Brief</a></p>
+			<p><a href="appendices/ExpertEthicsForm.pdf" target="_blank">Ethics form for professional</a></p>
+			<p><a href="appendices/StudentEthicsForm.pdf" target="_blank">Ethics form for student</a></p>
+			<p><a href="appendices/Initial Questionnaire responses.pdf" target="_blank">First survey responses</a></p>
+			<p><a href="appendices/PostProjectDeadlineMeeting.pdf" target="_blank">Final survey responses</a></p>			
+		</div>	
 	</div>
-	<div id="footer" class="span12">
-		May 30th 2014
-	</div>	
+	<div id="footer" class="row-fluid span12">
+		<div class="span10"><img src="images/Banner_for_reports.jpg" alt="Education and Training Foundation banner" width="100%" /></div>
+		<div class="span2">June 30th 2014</div>
+	</div>
 </div>	
 </body>
 </html>	

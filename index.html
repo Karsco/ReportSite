@@ -3,72 +3,243 @@
 <head>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
 	<link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.css" />
+	<link rel="stylesheet" type="text/css" href="css/ngDialog.css" />
+	<link rel="stylesheet" type="text/css" href="css/ngDialog-theme-default.css" />
 	<link rel="stylesheet" type="text/css" href="css/myStyles.css" />
+	
 <!--AngularJS functions -->	
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular-animate.js"></script>
+	<script src="js/ngDialog.js"></script>
+	<script type="text/javascript" src="js/myFunctions.js"></script>	
 	<title>Practitioner-led action research project</title>
 </head>
-<body>
-<div id="container-fluid">
-	<div id="nav" class="row-fluid span12 navbar">
-		<div class="navbar-inner">
-			<ul class="nav">
-				<li class="active"><a href="#" class="home" >Home</a>
-				<li class="divider-vertical"></li>
-				<li><a href="LitReview.html">Literature Review</a></li>
-				<li class="divider-vertical"></li>				
-				<li><a href="bibliography.html">Bibliography</a></li>
-				<li class="divider-vertical"></li>				
-				<li><a href="progress.html">Progress Blog</a></li>
-			</ul>
-		</div>
-	</div>
+<body ng-app="AngularAnimation">
+<div id="container-fluid" class="span12">
 	<div id="header" class="row-fluid span12">
-		<div class="span8">
-			<h2 class="rightalign"><strong>A practitioner-led action research project: </strong></h2>
-			&nbsp;&nbsp;
+		<div class="span12">
 			<h3 class="rightalign"><strong>Investigating the effect on student motivation of employer-supported learning and assessment activities.</strong></h3>
-			<h5 class="rightalign"><strong>Karen Scott</strong></h5>
-		</div>	
-		<div class="span2"><img src="images/MyPic.jpg" alt="Lecturer, Mid Kent College of HFE, Medway Campus, Gillingham, Kent" width="90%" /></div>
-	</div>
-	<div id="section" class="row-fluid span12">
-		<h3 class="leftalign"><strong><a href="aims.pdf" target="blank">Aims and objectives</a></strong></h3>
-		&nbsp;
-		<p>Students of level 3 vocationally related Computing/IT courses often enter the course with very little idea of 
-		what it means to work in the IT industry. Students can suffer from low levels of motivation, which may be caused 
-		by an inability to see the purpose of their learning in relation to a career path. Their learning is focused in 
-		one area, whose relevance may not be apparent or appreciated. This is not learning for the sake of furthering a 
-		general education, neither is it training for a specific job. It is somewhere in between.</p>
-		&nbsp;
-		<p>Anecdotal evidence suggests that there is a shortage of suitably skilled employees in the IT industry and, 
-		therefore, an increase in employer input and support is highly desirable. There is a growing involvement in 
-		computing from major employers such as Google, O2 and others, which is aimed mostly at schools, but for many 
-		colleges, local employers are mostly SMEs with little time and without the staff to take on an education liaison 
-		role.</p>
-		&nbsp;
-		<p>This project aimed to <em>study the effect on motivation of using assessment material in the form of a 
-		competition, which will follow a brief agreed and set by employers and college staff</em>. The assessment 
-		brief was delivered to two groups of students on the second year of a BTEC Level 3 course in IT.</p>
-		&nbsp;
-		<p>Motivation was measured by examining the proportion of students who met deadlines on non-employer-led 
-		assignments and employer-led, competitive assignments and by collating and recording attitudes towards assessment 
-		exercises before and after the activity. It is anticipated that a learning/assessment activity for all students, 
-		such as an employer set and supported competition, due to its link to the real world, would raise motivation 
-		levels for students and would be manageable, inclusive and attractive to employers. It was not within the scope
-		of this project to assess employer attitudes towards this type of activity as it would only be possible to 
-		involve one or two employers, as brief setters and as competition judges. However, the views of the employers involved 
-		do form part of the project evaluation.</p>
-		&nbsp;
-		<p>Activities of this type have been used before and students, especially high achievers, have expressed a liking 
-		for this type of assessment. However, the effects on all students in a cohort have not been measured and, in 
-		particular, the effect on those with low motivation levels has not yet been considered. This project <em>aims 
-		to study the effect on motivation levels of all students in a cohort in terms of meeting deadlines and attempting 
-		all parts of the activity.</em></p>
+		</div>
+	</div>	
+	<div id="section" class="span12" ng-controller="SlideCtrl">
+		<form ng-show="ready">
+			<div class="switch" ng-switch='article' ng-animate="'animate'">
+<!-- ngSwitchWhen: 1 -->
+				<div ng-switch-when="1">
+					<div class="span5"><h3 class="leftalign"><strong>Abstract</strong></h3></div>
+					<div class="span2"><a class="btn" href="main.html"><strong>Enter site</strong></a></div>
+					<div class="span2"><a class="btn disabled" href="#" ><strong>Previous</strong></a></div>					
+					<div class="span2"><a class="btn" href="#" ng-click="nextClicked()"><strong>Next</strong></a></div>
+					&nbsp;
+					<hr />
+					<div class="row-fluid span12" ng-controller="dialogCtrl">
+						<div class="span6 splashscreenbox">
+							<h4><strong>Project</strong></h4>
+							<p>This project aimed to study the effect on motivation of using assessment material in the form of a competition, which will 
+							follow a brief agreed and set by employers and college staff.  The assessment brief was delivered to two groups of students on 
+							the second year of a BTEC Level 3 course in IT.</p>
+							&nbsp;
+							<img src="images/Project-life-cycle.jpg" alt="Project Life Cycle" width="100%" />							
+							<div class="span5"><a class="btn splashscreen" href="#" ng-click="open('motivationMeasures')"><strong>Measuring motivation</strong></a></div>
+							<div class="span5"><a class="btn splashscreen" href="#" ng-click="open('Impacts')"><strong>Possible impacts</strong></a></div>
+						</div>
+						<div class="span6 splashscreenbox">
+							<h4><strong>Findings</strong></h4>
+							<p>The sample group was small, consisting of the whole population of two groups of second year BTEC IT students.  Results, therefore 
+							cannot be reliably extrapolated across all IT students.  However, the findings give an insight into the value of involving people from 
+							industry in a student project in terms of motivation and the value students place on this involvement.</p>
+							&nbsp;
+							<p><strong><em>All students who had persistently missed deadlines met at least one deadline for this project and there was an 
+							improvement in rating of 2.86 (57%) on average hand-in rates.</em></strong></p>
+							&nbsp;
+							<p><strong><em>All students who consistently met deadlines did meet all deadlines for this assignment.</em></strong></p>
+							&nbsp;
+							<p><strong><em>There was an increase in the number of students who met the pass criteria for this assignment on first submission.</em></strong></p>
+							&nbsp;						
+							<p><strong><em>At least 70% of students valued the style of the assessment, in terms of the involvement of people from industry and 
+							the real client, feeling that it helped them to achieve work of a quality that was higher than they otherwise would have been able 
+							to achieve.</em></strong></p>
+							&nbsp;
+						</div>	
+					</div>							
+				</div>
+			<!-- ngSwitchWhen: 2 -->
+				<div ng-switch-when="2">
+					<div class="span5"><h3 class="leftalign"><strong>What did the professionals say?</strong></h3></div>
+					<div class="span2"><a class="btn" href="main.html"><strong>Enter site</strong></a></div>					
+					<div class="span2"><a class="btn" href="#" ng-click="prevClicked()"><strong>Previous</strong></a></div>					
+					<div class="span2"><a class="btn" href="#" ng-click="nextClicked()"><strong>Next</strong></a></div>
+					&nbsp;
+					<hr />
+					<div class="row-fluid span12">
+						<h4><strong>James</strong></h4>
+						<p>I felt that the Wordpress clinic exercise was a very productive one! I could sense that most of the students were excited to be able to 
+						get on with stuff and enjoying creating their websites. From both sessions I came away feeling excited that I had been part of a group of 
+						people that were being creative and improving their skill sets which was immensely satisfying.</p>
+						&nbsp;
+						<p>From some of the students I still felt a sense of frustration at not being able to move forward as fast as they wanted to and a lack of 
+						drive to search for a solution on the web for themselves but instead expected a solution from one of us. I would like to encourage them to try 
+						lots of different themes and plugins and to get a sense of the variety that is available with them and to find out what works for them.</p>
+						&nbsp;
+						<p>I was impressed at the level of enthusiasm for the subject from most of the students and their ability to grasp Wordpress and web development 
+						in general.</p>
+						&nbsp;
+						<p>I got great experience in teaching what I know to other people. It took me out of my comfort zone as I was required to know the subject 
+						being discussed and to come up with information quickly. I also enjoyed the challenge of encouraging different types of students to find 
+						solutions to problems themselves and it was very satisfying when they were able to do this.</p>
+						&nbsp;
+						<p>I would like to improve how I encourage students to learn for themselves as I think that this is one of the main things that the students 
+						would benefit from as I think that there is a slight lack of patience and confidence from them that I would like to help them improve on. 
+						I do not have the answer to this at the moment but with my current level of experience it would require me to try different things out and 
+						test the results.</p>
+						&nbsp;
+						<p>Thank you again for inviting me to do this. I very much enjoyed it and hope that the students got as much from it as I did!</p>
+						&nbsp;
+					</div>							
+				</div>
+<!-- ngSwitchWhen: 3 -->
+				<div ng-switch-when="3">
+					<div class="span5"><h3 class="leftalign"><strong>What did the professionals say?</strong></h3></div>
+					<div class="span2"><a class="btn" href="main.html"><strong>Enter site</strong></a></div>					
+					<div class="span2"><a class="btn" href="#" ng-click="prevClicked()"><strong>Previous</strong></a></div>					
+					<div class="span2"><a class="btn" href="#" ng-click="nextClicked()"><strong>Next</strong></a></div>
+					&nbsp;
+					<hr />
+					<div class="row-fluid span12">
+						<h4><strong>Ahmed</strong></h4>
+						<p>How do you feel that the session benefited the students? <em>Hopefully it gave them a better understanding of how the industry 
+						works.</em></p>
+						&nbsp;
+						<p>What was the impact on you? <em>It helped me appreciate how tricky some concepts may be to novices.</em></p>
+						&nbsp;
+						<p>How could it be improved? <em>By having more sessions.</em></p>
+						&nbsp;
+						<p>Do you think it is important for students to work with someone like you who can bring ideas and examples from the industry to 
+						their field of experience?  <em>I believe so.</em></p>
+						&nbsp;
+						<p>I would really appreciate any short, honest feedback you can give.  <em>I think more emphasis should be given on the importance 
+						of information architecture, user experience and coding skills instead of purely design.</em></p>
+						&nbsp;
+					</div>							
+				</div>
+<!-- ngSwitchWhen: 4 -->
+				<div ng-switch-when="4">
+					<div class="span5"><h3 class="leftalign"><strong>What did the students produce?</strong></h3></div>
+					<div class="span2"><a class="btn" href="main.html"><strong>Enter site</strong></a></div>					
+					<div class="span2"><a class="btn" href="#" ng-click="prevClicked()"><strong>Previous</strong></a></div>					
+					<div class="span2"><a class="btn" href="#" ng-click="nextClicked()"><strong>Next</strong></a></div>
+					&nbsp;
+					<hr />
+					<div class="row-fluid span12">
+						<img alt="Webpage image" src="images/Webpage.png" />
+					</div>							
+				</div>
+<!-- ngSwitchWhen: 5 -->
+				<div ng-switch-when="5">
+					<div class="span5"><h3 class="leftalign"><strong>What did the students produce?</strong></h3></div>
+					<div class="span2"><a class="btn" href="main.html"><strong>Enter site</strong></a></div>
+					<div class="span2"><a class="btn" href="#" ng-click="prevClicked()"><strong>Previous</strong></a></div>					
+					<div class="span2"><a class="btn" href="#" ng-click="nextClicked()"><strong>Next</strong></a></div>
+					&nbsp;
+					<hr />
+					<div class="row-fluid span12">
+						<img alt="Webpage image" src="images/Webpage2.png" />
+					</div>							
+				</div>
+<!-- ngSwitchWhen: 6 -->
+				<div ng-switch-when="6">
+					<div class="span5"><h3 class="leftalign"><strong>What did the students produce?</strong></h3></div>
+					<div class="span2"><a class="btn" href="main.html"><strong>Enter site</strong></a></div>
+					<div class="span2"><a class="btn" href="#" ng-click="prevClicked()"><strong>Previous</strong></a></div>					
+					<div class="span2"><a class="btn" href="#" ng-click="nextClicked()"><strong>Next</strong></a></div>
+					&nbsp;
+					<hr />
+					<div class="row-fluid span12">
+						<img alt="Webpage image" src="images/Webpage3.png" />
+					</div>							
+				</div>
+<!-- ngSwitchWhen: 7 -->
+				<div ng-switch-when="7">
+					<div class="span5"><h3 class="leftalign"><strong>What did the students produce?</strong></h3></div>
+					<div class="span2"><a class="btn" href="main.html"><strong>Enter site</strong></a></div>
+					<div class="span2"><a class="btn" href="#" ng-click="prevClicked()"><strong>Previous</strong></a></div>					
+					<div class="span2"><a class="btn" href="#" ng-click="nextClicked()"><strong>Next</strong></a></div>
+					&nbsp;
+					<hr />
+					<div class="row-fluid span12">
+						<img alt="Webpage image" src="images/webpage4.png" />
+					</div>							
+				</div>
+<!-- ngSwitchWhen: 8 -->
+				<div ng-switch-when="8">
+					<div class="span5"><h3 class="leftalign"><strong>What did the students produce?</strong></h3></div>
+					<div class="span2"><a class="btn" href="main.html"><strong>Enter site</strong></a></div>
+					<div class="span2"><a class="btn" href="#" ng-click="prevClicked()"><strong>Previous</strong></a></div>					
+					<div class="span2"><a class="btn" href="#" ng-click="nextClicked()"><strong>Next</strong></a></div>
+					&nbsp;
+					<hr />
+					<div class="row-fluid span12">
+						<img alt="Webpage image" src="images/webpage5.PNG" />
+					</div>							
+				</div>
+<!-- ngSwitchWhen: 9 -->
+				<div ng-switch-when="9">
+					<div class="span5"><h3 class="leftalign"><strong>What did the students produce?</strong></h3></div>
+					<div class="span2"><a class="btn" href="main.html"><strong>Enter site</strong></a></div>
+					<div class="span2"><a class="btn" href="#" ng-click="prevClicked()"><strong>Previous</strong></a></div>					
+					<div class="span2"><a class="btn disabled" href="#"><strong>Next</strong></a></div>
+					&nbsp;
+					<hr />
+					<div class="row-fluid span12">
+						<img alt="Webpage image" src="images/webpage6.PNG" />
+					</div>							
+				</div>			
+			</div>
+		</form>	
 	</div>
 	<div id="footer" class="row-fluid span12">
-		May 30th 2014
+		<div class="span10"><img src="images/Banner_for_reports.jpg" alt="Education and Training Foundation banner" width="100%" /></div>
+		<div class="span2">June 30th 2014</div>
 	</div>
-</div>	
+<!-- scripts -->	
+	<script type="text/ng-template" id="motivationMeasures">
+		<div class="ngdialog-message">
+			<div>
+				<h4><strong>Measuring motivation</strong></h4>
+				&nbsp;
+				&nbsp;
+				<p>Motivation was measured by examining the proportion of students who met deadlines on non-employer-led assignments and 
+				employer-led, competitive assignments and by collating and recording attitudes towards exercises before and after the activity. 
+				It is anticipated that a learning/assessment activity for all students, such as an employer set and supported competition, due to 
+				its link to the real world, would raise motivation levels for students and would be manageable, inclusive and attractive to 
+				employers. It was not within the scope of this project to assess employer attitudes towards this type of activity as it would 
+				only be possible involve one or two employers, as brief setters and as competition judges. However, the views of the employers 
+				involved do form part of the project evaluation.</p>
+				&nbsp;
+							<p>Activities of this type have been used before and students, especially high achievers, have expressed a liking for this type of 
+							assessment. However, the effects on all students in a cohort have not been measured and, in particular, the effect on those with 
+							low motivation levels has not yet been considered. This project aims to study the effect on motivation levels of all students in a 
+							cohort in terms of meeting deadlines and attempting all parts of the activity.</p>
+							&nbsp;
+			</div>
+		</div>
+	</script>
+	<script type="text/ng-template" id="Impacts">
+		<div class="ngdialog-message">
+			<div>
+				<h4><strong>Impacts</strong></h4>
+				&nbsp;
+				&nbsp;
+				<p>Activities of this type have been used before and students, especially high achievers, have expressed a liking for this type of 
+				assessment. However, the effects on all students in a cohort have not been measured and, in particular, the effect on those with 
+				low motivation levels has not yet been considered. Additionally, interventions by professionals in the learning process have not previously 
+				been tried.  This project aims to study the effect on motivation levels of all students in a cohort in terms of meeting deadlines and 
+				attempting all parts of the activity.</p>
+				&nbsp;
+			</div>
+		</div>
+	</script>		
+<!-- end of scripts -->				
+</div>
 </body>
 </html>	

@@ -1,7 +1,7 @@
 body{
 	font:0.9em 'Open Sans', sans-serif;
 	color: #5e5b64;
-	margin:auto 5px;
+	margin:auto 5px auto 5px;
 	text-align:center;
 	background-color:#ffffff;
 }
@@ -38,6 +38,51 @@ hr{
 	text-align:left;
 }
 
+.centrealign{
+	width:100%;
+	text-align:center;
+}
+
+.smallText{
+	font-size:0.5em;
+}
+	
+.homeLink{
+	border-style:solid;
+	border-width:5px;
+	border-color: #5597b4;
+	height:200px;
+	text-align:center;
+	background-color:#5e5b64;
+	color:#ffffff;
+	margin-left:0px;
+	margin-right:0px;
+}
+
+.home_btn_group{
+	height:50px;
+	position:relative;
+	top:20px;
+	text-align:center;
+	padding-bottom:10px;
+}
+
+.audio_btn{
+	height:100%;
+}	
+
+.modalLarge{
+	width:1000px;
+}
+
+.splashscreenbox{
+	width:95%;
+}
+
+.btn.splashscreen{
+	color:#dd6e14;
+}	
+	
 #nav{
 	display: block;
 	background-color:transparent;
@@ -47,7 +92,7 @@ hr{
 
 #header{
 	display: block;
-	background-image:url(images/bg.jpg);
+	background-image:url(./images/bg.jpg);
 	background-repeat:no-repeat;
 	background-size:100% 100%;
 	border-width:0px 0px 5px 0px;
@@ -55,7 +100,7 @@ hr{
 	border-color:#5597b4;
 	box-shadow:0 1px 1px #ccc;
 	background-color:transparent;
-	margin:0px 0px 0px 40px;
+	*margin:0px 0px 0px 40px;
 }
 
 #section{
